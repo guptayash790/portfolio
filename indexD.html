@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Developer Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      background-color: #f4f4f4;
+      color: #333;
+      padding: 20px;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #444;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem;
+      display: block;
+    }
+    nav a:hover {
+      background-color: #555;
+    }
+    section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+    h2 {
+      margin-bottom: 1rem;
+      color: #222;
+    }
+    .profile-img {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin: 1rem auto;
+    }
+    /* Profile Section */
+    .profile {
+      background-color: #f2eaa8;
+      padding: 25px 30px;
+      border-radius: 12px;
+      max-width: 700px;
+      margin: 20px auto;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+    .profile ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .profile li {
+      margin-bottom: 10px;
+    }
+    .profile li strong {
+      color: #0077cc;
+    }
+    /* Education Section */
+    .education-container {
+      background-color: #ffe6e6;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .education-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .education-container ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .education-container li {
+      margin-bottom: 15px;
+    }
+    .education-container li h3 {
+      color: #0077cc;
+      margin-bottom: 5px;
+    }
+    .education-container li p {
+      color: #333;
+    }
+    /* Projects Section */
+    .project {
+      background: white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-left: 5px solid #4CAF50;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .project h3 {
+      margin-bottom: 10px;
+    }
+    {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      
+    }
+
+    .container {
+      display: flex;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+      margin-left: 200px;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .card {
+      margin-left: 100px;
+      perspective: 1000px;
+      
+    }
+
+    .card-inner {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      justify-content: center;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 20px;
+      backface-visibility: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #FFD700, #ff00ae);
+      justify-content: center;
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, #4CAF50, #0e8732);
+      transform: rotateY(180deg);
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding-bottom: 0.5rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+
+    li::before {
+      content: "🎯";
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+      .card-inner {
+        height: auto;
+      }
+
+      .card-front, .card-back {
+        height: auto;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Portfolio</h1>
+    <p>Java Developer | Problem Solver | Tech Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#profile">Profile</a>
+    <a href="#education">Education</a>
+  </nav>
+
+  <!-- About Me Section -->
+  <section id="about" class="profile">
+    <h2>About Me</h2>
+    <img src="https://via.placeholder.com/150" alt="Profile Image" class="profile-img">
+    <p>I am a passionate and motivated student pursuing a Master degree in Computer Applications (MCA). My educational foundation was built at Vivakanand School, where I developed a strong academic background and cultivated essential skills for personal and professional growth.</p>
+    <p>I am skilled in programming languages such as C, C++, Java, Python, and HTML5 and am currently learning full stack web development. I believe in continuous learning and personal growth, and I am actively seeking an internship opportunity to further expand my knowledge and gain practical experience.</p>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education-container">
+    <h2>Education</h2>
+    <ul>
+      <li>
+        <h3>MCA - Master of Computer Applications</h3>
+        <p><strong>College:</strong> Noida Institute of Engineering and Technology, Noida</p>
+        <p><strong>Year:</strong> 2024 - 2026 | <strong>CGPA:</strong> 8.3/10</p>
+      </li>
+      <li>
+        <h3>BCA - Bachelor of Computer Applications</h3>
+        <p><strong>College:</strong> IP College, Bulandshahr</p>
+        <p><strong>Year:</strong> 2021 - 2024 | <strong>CGPA:</strong> 7.4/10</p>
+      </li>
+      <li>
+        <h3>12th Standard</h3>
+        <p><strong>School:</strong> Vivakanand Saraswati Vidhya Mandir Inter College, Bulandshahr</p>
+        <p><strong>Year:</strong> 2021 | <strong>Percentage:</strong> 68.8%</p>
+      </li>
+      <li>
+        <h3>10th Standard</h3>
+        <p><strong>School:</strong> Vivakanand Saraswati Vidhya Mandir Inter College, Bulandshahr</p>
+        <p><strong>Year:</strong> 2019 | <strong>Percentage:</strong> 82.8%</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>QR Code Generator</h3>
+      <p>To build a QR code generator as a major project using HTML, CSS, and JavaScript, the project involves creating a web application where users can input data (such as text, URLs, or other information) and generate a downloadable QR code image. </p>
+    </div>
+    <div class="project">
+      <h3>Doctor Management System</h3>
+      <p>Doctor Appointment Management System (Mini Java Project) This project is designed to facilitate online appointment booking and management for doctors and patients, using Java technologies like Servlets, JSP, JDBC, and the Collection Framework to interact with an Oracle database.Technologies and Frameworks Used: Java Collections  Framework:.</p>
+    </div>
+  </section>
+  <body>
+  <div class="container">
+    
+    <!-- Hobbies Card -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>Hobbies</h2>
+          <ul>
+            <li>Coding & Exploring Tech</li>
+            <li>Playing Cricket</li>
+            <li>Strategy Games</li>
+          </ul>
+        </div>
+        <div class="card-back">
+          <h2>Creative Side</h2>
+          <ul>
+            <li>Tech Projects</li>
+            <li>Team Sports</li>
+            <li>Game Tactics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certificates Card -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <h2>Certificates</h2>
+          <ul>
+            <li>Java - Oracle Academy</li>
+            <li>Python, Linux - Infosys</li>
+            <li>AWS Learning Plan</li>
+            <li>Deloitte Data Analytics</li>
+          </ul>
+        </div>
+        <div class="card-back">
+          <h2>Issued By</h2>
+          <ul>
+            <li>Oracle Academy</li>
+            <li>Infosys Springboard</li>
+            <li>AWS Training</li>
+            <li>Deloitte Australia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+  
+
+  <!-- Profile Section -->
+  <section id="profile">
+    <h2>Profile</h2>
+    <p><strong>Name:</strong> YASH GUPTA</p>
+    <p><strong>Email:</strong> guptayash7906@gmail.com</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/yash-gupta-b278372a9" target="_blank">linkedin.com/in/yourprofile</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/guptayash790" target="_blank">github.com/yourgithub</a></p>
